@@ -1,0 +1,8 @@
+
+bat                     gnutls                  libffi                  libtermkey              m4                      openssl@1.1             screenresolution
+bdw-gc                  guile                   libgcrypt               libtool                 msgpack                 p11-kit                 sops
+ca-certificates         htop                    libgpg-error            libunistring            ncurses                 pinentry                tmux
+cmatrix                 icu4c                   libidn2                 libusb                  neofetch                pkg-config              tree-sitter
+gettext                 krb5                    libksba                 libuv                   neovim                  postgresql              unbound
+gmp                     libassuan               libnghttp2              luajit-openresty        nettle                  psql2csv                unibilium
+gnupg                   libevent                libtasn1                luv                     npth                    readline                utf8proc
