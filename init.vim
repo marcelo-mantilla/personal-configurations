@@ -7,7 +7,9 @@ set expandtab
 set smartindent
 set encoding=UTF-8
 set guifont=Hack:h11
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 2
+
+" LETS INTRODUCE COMMENT HERE
 
 call plug#begin("~/.vim/plugged")
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }

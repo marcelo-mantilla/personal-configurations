@@ -4,6 +4,15 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
+set-option -g status on
+set-option -g status-interval 2
+set-option -g status-justify "centre"
+set-option -g status-left-length 60
+set-option -g status-right-length 90
+set-option -g status-left "#(~/Programming/open-source/tmux-powerline/powerline.sh left)"
+set-option -g status-right "#(~/Programming/open-source/tmux-powerline/powerline.sh right)"
+set-hook -g session-created 'run-shell "~/Programming/open-source/tmux-powerline/powerline.sh init"' # prettifies the window-status segments
+
 
 # -- navigation ----------------------------------------------------------------
 
@@ -235,7 +244,10 @@ tmux_conf_theme_right_separator_sub="|"
 #     - #{uptime_s}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_status_left=" ❐ #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
+
+# TMUX STATUSBAR
+
+tmux_conf_theme_status_left=" 💻 #S | ↑#{?uptime_y, #{uptime_y}y,}#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} "
 tmux_conf_theme_status_right=" #{prefix}#{mouse}#{pairing}#{synchronized}#{?battery_status,#{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b "
 
 # status left style
@@ -313,8 +325,8 @@ tmux_conf_battery_vbar_palette="gradient"
 # symbols used to indicate whether battery is charging or discharging
 # tmux_conf_battery_status_charging="↑"       # U+2191
 # tmux_conf_battery_status_discharging="↓"    # U+2193
-tmux_conf_battery_status_charging="🔌"     # U+1F50C
-tmux_conf_battery_status_discharging="🔋"  # U+1F50B
+tmux_conf_battery_status_charging="🔋"     # U+1F50C
+# tmux_conf_battery_status_discharging="🔋"  # U+1F50B
 
 # clock style (when you hit <prefix> + t)
 # you may want to use %I:%M %p in place of %R in tmux_conf_theme_status_right
@@ -335,7 +347,7 @@ tmux_conf_copy_to_os_clipboard=false
 # -- user customizations -------------------------------------------------------
 
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded";
-set -g status-right '#(gitmux "#{pane_current_path}")'
+# set -g status-right '#(gitmux "#{pane_current_path}")'
 
 # this is the place to override or undo settings
 
@@ -358,7 +370,7 @@ set -g mouse on
 # bind C-Space send-prefix
 
 # move status line to top
-#set -g status-position top
+set -g status-position bottom
 
 
 # -- tpm -----------------------------------------------------------------------
