@@ -7,3 +7,5 @@ The bulk of this project should operate on symlinks, in order to have a source o
   `mkdir ~/.config/nvim`
 2. Create symlink:
   `ln -s init.lua ~/.config/nvim/init.lua`
+
+  NOTE: It's important to use absolute paths with symlinks, otherwise you will receive a `Too many levels of symbolic links` error.
